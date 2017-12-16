@@ -21,7 +21,7 @@ First, clone this repo and open terminal, run these commands:
 ```
 cd apiwars
 composer install
-cp .example.env .env
+cp .env.example .env
 php artisan key:generate
 ```
 
@@ -32,7 +32,7 @@ Then go back to terminal and continue:
 ```
 php artisan migrate
 php artisan db:seed --class=ApiEndpoints
-php -S localhost:8000 -t /public
+php -S localhost:8000 -t public
 ```
 
 Now, your app should be running on localhost:8000 port.

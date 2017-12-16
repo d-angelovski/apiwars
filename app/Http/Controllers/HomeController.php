@@ -35,7 +35,9 @@ class HomeController extends Controller
         $allRepos = array();
         foreach (ApiEndpoint::all() as $api) {
             $apiRepo = new ApiRepository($api);
-            $allRepos = array_merge($allRepos, $apiRepo->all());
+            if (is_array($apiRepo->all())) {
+                $allRepos = array_merge($allRepos, $apiRepo->all());
+            }
         }
 
         // sort by votes desc
